@@ -1,7 +1,7 @@
 # FLOUC - Forensic LOUdness Calculator
 
 ![FLOUC Banner](https://img.shields.io/badge/FLOUC-Forensic%20Loudness%20Calculator-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
+![License](https://img.shields.io/badge/License-GNU%20GPLv3-green)
 ![Python](https://img.shields.io/badge/Python-3.6%2B-blue)
 
 FLOUC is a professional-grade audio loudness analysis tool designed for forensic audio analysis and audio engineering applications. It calculates and visualizes audio loudness metrics according to the EBU R128 / ITU-R BS.1770 standard using the `pyloudnorm` implementation.
@@ -121,6 +121,10 @@ Main dependencies:
 - `pydub`: Additional audio format support
 - `matplotlib`: Visualization
 - `pyloudnorm`: EBU R128 loudness calculations
+
+## License
+
+This project is licensed under the GNU General Public License v3.0 (GNU GPLv3) - see the LICENSE file for details.
 
 ## Acknowledgments
 
