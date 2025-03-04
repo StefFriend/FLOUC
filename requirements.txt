@@ -1,0 +1,10 @@
+numpy>=1.19.0
+soundfile>=0.10.3
+pydub>=0.25.1
+matplotlib>=3.3.0
+pyloudnorm>=0.1.0
+hashlib
+argparse
+wave
+contextlib
+glob
