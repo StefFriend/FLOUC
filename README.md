@@ -1,6 +1,6 @@
 # FLOUC - Forensic LOUdness Calculator
 
-![FLOUC Banner](https://img.shields.io/badge/FLOUC-Forensic%20Loudness%20Calculator-blue)
+![FLOUC Banner](https://img.shields.io/badge/FLOUC-Forensic%20LOUdness%20Calculator-blue)
 ![License](https://img.shields.io/badge/License-GNU%20GPLv3-green)
 ![Python](https://img.shields.io/badge/Python-3.6%2B-blue)
 
