@@ -126,6 +126,8 @@ Main dependencies:
 
 This project is licensed under the GNU General Public License v3.0 (GNU GPLv3) - see the LICENSE file for details.
 
+If you use this software please cite this repo: [FLOUC - Forensic LOUdness Calculator (https://github.com/StefFriend/FLOUC)](https://github.com/StefFriend/FLOUC)
+
 ## Acknowledgments
 
 - [pyloudnorm](https://github.com/csteinmetz1/pyloudnorm) - Christian Steinmetz's implementation of ITU-R BS.1770
