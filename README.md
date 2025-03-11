@@ -14,6 +14,7 @@ FLOUC is a professional-grade audio loudness analysis tool designed for forensic
 - **Rich Visualizations**: Generate waveforms, spectrograms, and loudness graphs
 - **Detailed Reports**: Output to CSV files and comprehensive PDF reports
 - **Batch Processing**: Process individual files or entire directories
+- **File Comparison**: Compare two audio files side by side with visual and numerical analysis
 - **File Integrity**: SHA-256 hash verification for each analyzed file
 - **Forensic Ready**: Designed with audio forensics principles in mind
 
@@ -45,14 +46,29 @@ This will:
 - Output CSV data files
 - Display a summary of loudness metrics
 
+### Compare Two Audio Files
+
+```bash
+python flouc.py --compare path/to/file1.wav path/to/file2.wav
+```
+
+This will:
+- Analyze both audio files
+- Generate side-by-side comparison visualizations
+- Create a comparative PDF report
+- Output a combined CSV with data from both files
+- Display summary metrics for both files
+
 ### Command Line Options
 
 ```bash
 python flouc.py path/to/file_or_directory [--output OUTPUT_DIR] [--nopdf] [--file-ext wav,mp3]
+python flouc.py --compare file1 file2 [--output OUTPUT_DIR] [--nopdf]
 ```
 
 Parameters:
-- `input`: Path to audio file or directory containing audio files
+- `input`: Path to audio file or directory containing audio files (not used with --compare)
+- `--compare`: Compare two audio files side by side (requires exactly two file paths)
 - `--output`: Output directory for results (default: ./output_loudness)
 - `--nopdf`: Skip PDF report generation
 - `--file-ext`: Filter only specified file extensions (comma-separated)
@@ -69,6 +85,8 @@ This will generate a summary CSV file along with individual reports for each aud
 
 ## Output Files
 
+### For Individual Files
+
 For each processed audio file, FLOUC generates:
 
 1. **CSV Data**: `loudness_results_filename.csv` - Contains time-aligned momentary loudness values
@@ -79,6 +97,17 @@ For each processed audio file, FLOUC generates:
    - SHA-256 hash for file integrity verification
    - Visualizations (waveform, spectrograms, loudness graph)
 4. **Summary**: `loudness_summary.csv` - When processing directories, includes all files' metrics
+
+### For File Comparisons
+
+When comparing two files, FLOUC generates:
+
+1. **Comparison CSV**: `loudness_comparison_file1_vs_file2.csv` - Combined CSV with data from both files
+2. **Comparison Chart**: `chart_comparison_file1_vs_file2.png` - Side-by-side visual comparison
+3. **Comparison PDF**: `report_comparison_file1_vs_file2.pdf` - Two-page report with:
+   - Technical details for both files
+   - Comparative loudness metrics
+   - Side-by-side visualizations (waveforms, spectrograms, loudness)
 
 ## Core Functions
 
@@ -95,11 +124,13 @@ For each processed audio file, FLOUC generates:
   - Full frequency range spectrogram
   - Limited range spectrogram (20-4000 Hz)
   - Momentary loudness step plot with integrated loudness reference line
+- `create_comparison_plots(...)`: Generates side-by-side comparison of all visualizations for two files
 
 ### File Handling
 
 - `process_audio_file(audio_path, output_dir, create_pdf=True)`: Processes a single audio file
-- Main function: Handles command-line arguments and batch processing
+- `compare_two_audio_files(file1, file2, output_dir, create_pdf=True)`: Processes and compares two audio files
+- Main function: Handles command-line arguments, batch processing, and comparison mode
 
 ## Technical Background
 
